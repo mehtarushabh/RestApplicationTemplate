@@ -109,7 +109,7 @@
 	</dependencies>
 
 	<build>
-		<finalName>RestApplication</finalName>
+		<finalName>RestApplicationTemplate</finalName>
 		<pluginManagement>
 			<plugins>
 				<plugin>
