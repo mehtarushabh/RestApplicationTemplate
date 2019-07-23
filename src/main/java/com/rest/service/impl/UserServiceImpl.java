@@ -1,5 +1,6 @@
 package com.rest.service.impl;
 
+
 import com.rest.dao.IUserDao;
 import com.rest.model.User;
 import com.rest.service.IUserService;
@@ -8,8 +9,10 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+
 @Component
 public class UserServiceImpl implements IUserService{
+	
 	
 	@Autowired
 	private IUserDao iUserDao;
@@ -23,15 +26,15 @@ public class UserServiceImpl implements IUserService{
 		return 0;
 	}
 	
+	
 	@Override
-	public User findUserbyId(int userId){
+	public User findUserById(int userId){
 		return iUserDao.getUserById(userId);
 	}
 	
+	
 	@Override
-	public List<User> findallUsers(){
+	public List<User> findAllUsers(){
 		return iUserDao.getAllUsers();
 	}
-	
-	
 }

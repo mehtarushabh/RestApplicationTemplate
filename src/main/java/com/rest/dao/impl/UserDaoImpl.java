@@ -1,5 +1,6 @@
 package com.rest.dao.impl;
 
+
 import com.rest.dao.IUserDao;
 import com.rest.model.User;
 import com.rest.utils.IDatabaseUtils;
@@ -10,16 +11,13 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+
 @Repository
 public class UserDaoImpl implements IUserDao{
 	
+	
 	@Autowired
 	private IDatabaseUtils IDatabaseUtils;
-	
-	
-	public UserDaoImpl(IDatabaseUtils IDatabaseUtils){
-		this.IDatabaseUtils = IDatabaseUtils;
-	}
 	
 	
 	@Override
@@ -46,6 +44,7 @@ public class UserDaoImpl implements IUserDao{
 		return 0;
 	}
 	
+	
 	@Override
 	public User getUserById(int userId){
 		Connection connection = IDatabaseUtils.getConnectionFromLocalServer("rest","postgres","admin");
@@ -67,7 +66,7 @@ public class UserDaoImpl implements IUserDao{
 	}
 	
 	
-	public User populateUserFromResultSetInstance(ResultSet rs){
+	private User populateUserFromResultSetInstance(ResultSet rs){
 		User user = new User();
 		try{
 			user.setUserId(rs.getInt(1));

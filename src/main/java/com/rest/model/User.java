@@ -8,7 +8,9 @@ import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
 
 import java.time.LocalDate;
 
+
 public class User{
+	
 	
 	private int userId;
 	private String firstName;
@@ -45,7 +47,6 @@ public class User{
 		this.lastName = lastName;
 	}
 	
-	
 	public String getEmail(){
 		return email;
 	}
@@ -53,7 +54,6 @@ public class User{
 	public void setEmail(String email){
 		this.email = email;
 	}
-	
 	
 	public String getPassword(){
 		return password;

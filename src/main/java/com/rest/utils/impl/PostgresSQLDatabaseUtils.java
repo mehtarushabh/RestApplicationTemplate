@@ -1,5 +1,6 @@
 package com.rest.utils.impl;
 
+
 import com.rest.model.DatabaseContext;
 import com.rest.utils.IDatabaseUtils;
 import org.springframework.stereotype.Component;
@@ -8,48 +9,44 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+
 @Component
 public class PostgresSQLDatabaseUtils implements IDatabaseUtils{
 	
-	private DatabaseContext DatabaseContext;
+	private DatabaseContext databaseContext;
+	
 	
 	PostgresSQLDatabaseUtils(){
-		DatabaseContext = new DatabaseContext();
+		databaseContext = new DatabaseContext();
 	}
 	
 	
 	public Connection getConnectionFromLocalServer(String dbName,String username,String password){
-		Connection connection = null;
-		DatabaseContext.setServerIP("localhost");
-		DatabaseContext.setPortNumber("5432");
-		DatabaseContext.setUserName(username);
-		DatabaseContext.setPassword(password);
-		DatabaseContext.setDatabaseName(dbName);
+		
+		databaseContext.setServerIP("localhost");
+		databaseContext.setPortNumber("5432");
+		databaseContext.setUserName(username);
+		databaseContext.setPassword(password);
+		databaseContext.setDatabaseName(dbName);
 		try{
 			Class.forName("org.postgresql.Driver");
-			connection = DriverManager.getConnection(
-					"jdbc:postgresql://" + DatabaseContext.getServerIP() + ":" + DatabaseContext.getPortNumber() + "/" + DatabaseContext.getDatabaseName(),DatabaseContext.getUserName(),DatabaseContext.getPassword()
-			);
+			return DriverManager.getConnection("jdbc:postgresql://" + databaseContext.getServerIP() + ":" + databaseContext.getPortNumber() + "/" + databaseContext.getDatabaseName(),databaseContext.getUserName(),databaseContext.getPassword());
 		}catch(ClassNotFoundException | SQLException e){
 			e.printStackTrace();
 		}
-		
-		return connection;
+		return null;
 	}
+	
 	
 	@Override
 	public Connection getConnection(DatabaseContext DatabaseContext){
-		this.DatabaseContext = DatabaseContext;
-		Connection connection = null;
+		this.databaseContext = DatabaseContext;
 		try{
 			Class.forName("org.postgresql.Driver");
-			connection = DriverManager.getConnection(
-					"jdbc:postgresql://" + DatabaseContext.getServerIP() + ":" + DatabaseContext.getPortNumber() + "/" + DatabaseContext.getDatabaseName(),DatabaseContext.getUserName(),DatabaseContext.getPassword()
-			);
+			return DriverManager.getConnection("jdbc:postgresql://" + DatabaseContext.getServerIP() + ":" + DatabaseContext.getPortNumber() + "/" + DatabaseContext.getDatabaseName(),DatabaseContext.getUserName(),DatabaseContext.getPassword());
 		}catch(ClassNotFoundException | SQLException e){
 			e.printStackTrace();
 		}
-		return connection;
+		return null;
 	}
-	
 }

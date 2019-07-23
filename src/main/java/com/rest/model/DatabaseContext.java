@@ -1,12 +1,15 @@
 package com.rest.model;
 
+
 public class DatabaseContext{
+	
 	
 	private String serverIP = null;
 	private String portNumber = null;
 	private String userName = null;
 	private String password = null;
 	private String databaseName = null;
+	
 	
 	public String getServerIP(){
 		return serverIP;

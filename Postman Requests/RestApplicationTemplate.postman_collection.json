@@ -22,15 +22,68 @@
 		  "raw": "{\n\t\"firstName\" : \"Pichu\",\n\t\"lastName\" : \"Mehta\",\n\t\"active\" : true,\n\t\"email\" : \"rushabh1992@gmail.com\",\n\t\"age\" : 25,\n\t\"password\" : \"1234\",\n\t\"dob\" : [2018,1,1]\n}"
 		},
 		"url": {
-		  "raw": "http://localhost:8080/RestApplication/createUser",
+		  "raw": "http://localhost:8080/RestApplicationTemplate/createUser",
 		  "protocol": "http",
 		  "host": [
 			"localhost"
 		  ],
 		  "port": "8080",
 		  "path": [
-			"RestApplication",
+			"RestApplicationTemplate",
 			"createUser"
+		  ]
+		}
+	  },
+	  "response": []
+	},
+	{
+	  "name": "Get All Users",
+	  "request": {
+		"method": "GET",
+		"header": [
+		  {
+			"key": "Content-Type",
+			"value": "application/json",
+			"type": "text"
+		  }
+		],
+		"url": {
+		  "raw": "http://localhost:8080/RestApplicationTemplate/getAllUsers",
+		  "protocol": "http",
+		  "host": [
+			"localhost"
+		  ],
+		  "port": "8080",
+		  "path": [
+			"RestApplicationTemplate",
+			"getAllUsers"
+		  ]
+		}
+	  },
+	  "response": []
+	},
+	{
+	  "name": "Get User by Id",
+	  "request": {
+		"method": "GET",
+		"header": [
+		  {
+			"key": "Content-Type",
+			"value": "application/json",
+			"type": "text"
+		  }
+		],
+		"url": {
+		  "raw": "http://localhost:8080/RestApplicationTemplate/getUser/3",
+		  "protocol": "http",
+		  "host": [
+			"localhost"
+		  ],
+		  "port": "8080",
+		  "path": [
+			"RestApplicationTemplate",
+			"getUser",
+			"3"
 		  ]
 		}
 	  },
