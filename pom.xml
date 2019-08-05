@@ -15,10 +15,9 @@
 		<springframework.version>5.1.8.RELEASE</springframework.version>
 		<spring-security.version>5.1.5.RELEASE</spring-security.version>
 		<jackson.library>2.9.9</jackson.library>
-		<junit.version>5.5.0</junit.version>
+		<junit.version>5.5.1</junit.version>
 		<servlet.version>4.0.1</servlet.version>
 		<postgresql.jdbc.version>42.2.6</postgresql.jdbc.version>
-		<mongodb.java.driver.version>2.12.3</mongodb.java.driver.version>
 
 		<maven.compiler.source>11</maven.compiler.source>
 		<maven.compiler.target>11</maven.compiler.target>
@@ -87,22 +86,17 @@
 			<artifactId>postgresql</artifactId>
 			<version>${postgresql.jdbc.version}</version>
 		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-config</artifactId>
 			<version>${spring-security.version}</version>
 		</dependency>
+
 		<dependency>
 			<groupId>com.fasterxml.jackson.datatype</groupId>
 			<artifactId>jackson-datatype-jsr310</artifactId>
 			<version>${jackson.library}</version>
-		</dependency>
-
-
-		<dependency>
-			<groupId>org.mongodb</groupId>
-			<artifactId>mongo-java-driver</artifactId>
-			<version>${mongodb.java.driver.version}</version>
 		</dependency>
 
 
