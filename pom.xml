@@ -14,7 +14,8 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<springframework.version>5.1.8.RELEASE</springframework.version>
 		<spring-security.version>5.1.5.RELEASE</spring-security.version>
-		<jackson.library>2.9.9</jackson.library>
+		<jackson.datatype.jsr310.version>2.9.9</jackson.datatype.jsr310.version>
+		<jackson.library.databind.version>2.9.9.2</jackson.library.databind.version>
 		<junit.version>5.5.1</junit.version>
 		<servlet.version>4.0.1</servlet.version>
 		<postgresql.jdbc.version>42.2.6</postgresql.jdbc.version>
@@ -78,7 +79,7 @@
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
-			<version>${jackson.library}</version>
+			<version>${jackson.library.databind.version}</version>
 		</dependency>
 
 		<dependency>
@@ -96,7 +97,7 @@
 		<dependency>
 			<groupId>com.fasterxml.jackson.datatype</groupId>
 			<artifactId>jackson-datatype-jsr310</artifactId>
-			<version>${jackson.library}</version>
+			<version>${jackson.datatype.jsr310.version}</version>
 		</dependency>
 
 
