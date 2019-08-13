@@ -20,7 +20,7 @@ public class User{
 	
 	@JsonDeserialize(using = LocalDateDeserializer.class)
 	@JsonSerialize(using = LocalDateSerializer.class)
-	private LocalDate dob;
+	private LocalDate dateOfBirth;
 	
 	
 	public int getUserId(){
@@ -63,11 +63,11 @@ public class User{
 		this.password = password;
 	}
 	
-	public LocalDate getDob(){
-		return dob;
+	public LocalDate getDateOfBirth(){
+		return dateOfBirth;
 	}
 	
-	public void setDob(LocalDate dob){
-		this.dob = dob;
+	public void setDateOfBirth(LocalDate dateOfBirth){
+		this.dateOfBirth = dateOfBirth;
 	}
 }

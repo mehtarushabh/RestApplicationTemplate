@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface IUserDao{
 	
-	int CreateUser(User user);
+	int createUser(User user);
 	
 	User getUserById(int userId);
 	

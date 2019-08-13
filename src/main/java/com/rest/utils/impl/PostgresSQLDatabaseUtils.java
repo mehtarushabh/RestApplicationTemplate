@@ -13,16 +13,9 @@ import java.sql.SQLException;
 @Component
 public class PostgresSQLDatabaseUtils implements IDatabaseUtils{
 	
-	private DatabaseContext databaseContext;
-	
-	
-	PostgresSQLDatabaseUtils(){
-		databaseContext = new DatabaseContext();
-	}
-	
 	
 	public Connection getConnectionFromLocalServer(String dbName,String username,String password){
-		
+		DatabaseContext databaseContext = new DatabaseContext();
 		databaseContext.setServerIP("localhost");
 		databaseContext.setPortNumber("5432");
 		databaseContext.setUserName(username);
@@ -39,11 +32,10 @@ public class PostgresSQLDatabaseUtils implements IDatabaseUtils{
 	
 	
 	@Override
-	public Connection getConnection(DatabaseContext DatabaseContext){
-		this.databaseContext = DatabaseContext;
+	public Connection getConnection(DatabaseContext databaseContext){
 		try{
 			Class.forName("org.postgresql.Driver");
-			return DriverManager.getConnection("jdbc:postgresql://" + DatabaseContext.getServerIP() + ":" + DatabaseContext.getPortNumber() + "/" + DatabaseContext.getDatabaseName(),DatabaseContext.getUserName(),DatabaseContext.getPassword());
+			return DriverManager.getConnection("jdbc:postgresql://" + databaseContext.getServerIP() + ":" + databaseContext.getPortNumber() + "/" + databaseContext.getDatabaseName(),databaseContext.getUserName(),databaseContext.getPassword());
 		}catch(ClassNotFoundException | SQLException e){
 			e.printStackTrace();
 		}

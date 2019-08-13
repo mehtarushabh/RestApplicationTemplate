@@ -4,7 +4,6 @@ package com.rest.service.impl;
 import com.rest.dao.IUserDao;
 import com.rest.model.User;
 import com.rest.service.IUserService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -14,14 +13,17 @@ import java.util.List;
 public class UserServiceImpl implements IUserService{
 	
 	
-	@Autowired
-	private IUserDao iUserDao;
+	private final IUserDao iUserDao;
+	
+	public UserServiceImpl(IUserDao iUserDao){
+		this.iUserDao = iUserDao;
+	}
 	
 	
 	@Override
 	public int createUser(User user){
 		if(! user.getEmail().isBlank() && ! user.getPassword().isBlank()){
-			return iUserDao.CreateUser(user);
+			return iUserDao.createUser(user);
 		}
 		return 0;
 	}
