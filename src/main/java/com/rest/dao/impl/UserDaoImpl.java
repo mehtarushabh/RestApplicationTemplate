@@ -24,7 +24,7 @@ public class UserDaoImpl implements IUserDao{
 	
 	@Override
 	public int createUser(User user){
-		Connection connection = IDatabaseUtils.getConnectionFromLocalServer("rest","postgres","admin");
+		Connection connection = IDatabaseUtils.getConnectionFromLocalhost("rest","postgres","admin");
 		String sql = "INSERT INTO users(\"firstName\", \"lastName\", email, password, dob)" + "VALUES ( ?, ?, ?, ?, ?);";
 		
 		try{
@@ -48,7 +48,7 @@ public class UserDaoImpl implements IUserDao{
 	
 	@Override
 	public User getUserById(int userId){
-		Connection connection = IDatabaseUtils.getConnectionFromLocalServer("rest","postgres","admin");
+		Connection connection = IDatabaseUtils.getConnectionFromLocalhost("rest","postgres","admin");
 		User user = new User();
 		ResultSet rs;
 		String sql = "SELECT * FROM users WHERE userId = ?";
@@ -89,7 +89,7 @@ public class UserDaoImpl implements IUserDao{
 		String sql = "SELECT * FROM users";
 		List<User> allUsers = new ArrayList<>();
 		try{
-			PreparedStatement preparedStatement = IDatabaseUtils.getConnectionFromLocalServer("rest","postgres","admin").prepareStatement(sql);
+			PreparedStatement preparedStatement = IDatabaseUtils.getConnectionFromLocalhost("rest","postgres","admin").prepareStatement(sql);
 			rs = preparedStatement.executeQuery();
 			while(rs.next()){
 				User user = new User();

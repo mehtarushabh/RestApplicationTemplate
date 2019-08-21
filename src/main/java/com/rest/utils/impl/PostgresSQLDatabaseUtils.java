@@ -14,7 +14,7 @@ import java.sql.SQLException;
 public class PostgresSQLDatabaseUtils implements IDatabaseUtils{
 	
 	
-	public Connection getConnectionFromLocalServer(String dbName,String username,String password){
+	public Connection getConnectionFromLocalhost(String dbName,String username,String password){
 		DatabaseContext databaseContext = new DatabaseContext();
 		databaseContext.setServerIP("localhost");
 		databaseContext.setPortNumber("5432");
