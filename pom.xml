@@ -21,7 +21,7 @@
 		<jackson.library.databind.version>2.9.9.2</jackson.library.databind.version>
 		<junit.version>5.5.1</junit.version>
 		<servlet.version>4.0.1</servlet.version>
-		<postgresql.jdbc.version>42.2.6</postgresql.jdbc.version>
+		<postgresql.jdbc.version>42.4.1</postgresql.jdbc.version>
 
 		<!--Plugins-->
 		<maven.clean.plugin.version>3.1.0</maven.clean.plugin.version>
